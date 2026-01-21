@@ -95,15 +95,17 @@ $wgParserCacheType = 'redis';
 $wgCacheDirectory = "$IP/cache";
 
 ## Performance optimizations
-$wgUseFileCache = true;
+# Temporarily disabled to debug encoding issues
+$wgUseFileCache = false;
 $wgFileCacheDirectory = "$IP/cache";
-$wgUseLocalMessageCache = true;
-$wgEnableSidebarCache = true;
-$wgUseGzip = true;
+$wgUseLocalMessageCache = false;
+$wgEnableSidebarCache = false;
+$wgUseGzip = false;
 
 ## Additional performance settings
 $wgUseETag = true;
-$wgDisableOutputCompression = false;
+# Temporarily disabled to debug encoding issues
+$wgDisableOutputCompression = true;
 $wgResourceLoaderMaxQueryLength = 2000;
 $wgResourceLoaderStorageVersion = 2;
 $wgMiserMode = false;
