@@ -107,7 +107,7 @@ $wgUseETag = true;
 # Temporarily disabled to debug encoding issues
 $wgDisableOutputCompression = true;
 $wgResourceLoaderMaxQueryLength = 2000;
-$wgResourceLoaderStorageVersion = 2;
+$wgResourceLoaderStorageVersion = 3;
 $wgMiserMode = false;
 $wgDisableCounters = true;
 $wgHitCounterUpdateFreq = 1;
