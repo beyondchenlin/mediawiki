@@ -1,0 +1,37 @@
+services:
+  db:
+    image: mariadb:10.6
+    container_name: mw-db
+    environment:
+      MARIADB_DATABASE: mediawiki
+      MARIADB_USER: wiki
+      MARIADB_PASSWORD: wiki
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    command: --innodb-buffer-pool-size=256M --max-connections=100
+
+  redis:
+    image: redis:7-alpine
+    container_name: mw-redis
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: mw-web
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "8081:80"
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: "1"
+    volumes:
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./images:/var/www/html/images
+      - ./cache:/var/www/html/cache
+
+volumes:
+  db_data:

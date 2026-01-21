@@ -1,0 +1,17 @@
+.git
+.gitignore
+node_modules
+cache/*
+!cache/.gitkeep
+images/*
+!images/.gitkeep
+vendor/*
+composer.lock
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+.env.*.local
+docker-compose.production.yml
+PRODUCTION_DEPLOYMENT.md

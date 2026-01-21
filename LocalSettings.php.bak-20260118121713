@@ -1,0 +1,55 @@
+<?php
+# This file was manually generated to restore a missing LocalSettings.php.
+# You can edit values below to match your site preferences.
+
+# Protect against web entry
+if ( !defined( 'MEDIAWIKI' ) ) {
+	exit;
+}
+
+## Site settings
+$wgSitename = "MediaWiki";
+$wgMetaNamespace = "Project";
+$wgScriptPath = "";
+$wgServer = "http://localhost:8081";
+$wgResourceBasePath = $wgScriptPath;
+
+## Database settings
+$wgDBtype = "mysql";
+$wgDBserver = "db";
+$wgDBname = "mediawiki";
+$wgDBuser = "wiki";
+$wgDBpassword = "wiki";
+$wgDBprefix = "";
+$wgDBssl = false;
+$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
+
+# Shared database table
+# This has no effect unless $wgSharedDB is also set.
+$wgSharedTables[] = "actor";
+
+## Cache settings
+$wgMainCacheType = CACHE_ACCEL;
+$wgMemCachedServers = [];
+
+## Uploads
+$wgEnableUploads = true;
+$wgUseImageMagick = false;
+
+## Localization
+$wgLanguageCode = "en";
+$wgLocaltimezone = "UTC";
+
+## Keys
+$wgSecretKey = "cfbed5a5e1f8190dc79c7653c10abb9ee11a0d45739fdae8734af45befc4a37b";
+$wgAuthenticationTokenVersion = "1";
+$wgUpgradeKey = "0dae3162f1faf6a5c58ef1d14fe8577a";
+
+## Default skin
+$wgDefaultSkin = "vector-2022";
+
+# Enabled skins.
+wfLoadSkin( 'Vector' );
+wfLoadSkin( 'MonoBook' );
+
+# End of manually generated settings.
