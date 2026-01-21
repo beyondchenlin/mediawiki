@@ -39,8 +39,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/change-your-logo.svg",
-	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo-icon.svg",
+	'1x' => "$wgResourceBasePath/images/logo.png",
+	'icon' => "$wgResourceBasePath/images/logo.png",
 ];
 
 ## UPO means: this is also a user preference option
@@ -95,15 +95,17 @@ $wgParserCacheType = 'redis';
 $wgCacheDirectory = "$IP/cache";
 
 ## Performance optimizations
-$wgUseFileCache = true;
+# Temporarily disabled to debug encoding issues
+$wgUseFileCache = false;
 $wgFileCacheDirectory = "$IP/cache";
-$wgUseLocalMessageCache = true;
-$wgEnableSidebarCache = true;
-$wgUseGzip = true;
+$wgUseLocalMessageCache = false;
+$wgEnableSidebarCache = false;
+$wgUseGzip = false;
 
 ## Additional performance settings
 $wgUseETag = true;
-$wgDisableOutputCompression = false;
+# Temporarily disabled to debug encoding issues
+$wgDisableOutputCompression = true;
 $wgResourceLoaderMaxQueryLength = 2000;
 $wgResourceLoaderStorageVersion = 2;
 $wgMiserMode = false;
