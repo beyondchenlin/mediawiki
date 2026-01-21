@@ -39,7 +39,7 @@
         ['hi', 'हिन्दी'],
         ['hr', 'hrvatski'],
         ['hu', 'magyar'],
-        ['hy', 'հայերdelays'],
+        ['hy', 'հայերեն'],
         ['ia', 'interlingua'],
         ['id', 'Bahasa Indonesia'],
         ['it', 'italiano'],
@@ -77,34 +77,41 @@
     /**
      * Build HTML for a single language link
      */
-    function buildLanguageLink( langCode, langName ) {
+    function buildLanguageLink( langCode, langName, isPrimary ) {
         // Link changes the user's interface language via uselang parameter
         var currentUrl = new URL( window.location.href );
         currentUrl.searchParams.set( 'uselang', langCode );
 
-        return '<a href="' + currentUrl.toString() + '" ' +
-               'lang="' + langCode + '" ' +
-               'hreflang="' + langCode + '" ' +
-               'title="' + langName + '">' +
-               langName + '</a>';
+        var linkHtml = '<a href="' + currentUrl.toString() + '" ' +
+            'hreflang="' + langCode + '" ' +
+            'title="' + langName + '">' +
+            langName + '</a>';
+
+        if ( isPrimary ) {
+            return '<strong>' + linkHtml + '</strong>';
+        }
+
+        return '<bdi lang="' + langCode + '">' + linkHtml + '</bdi>';
     }
 
     /**
      * Build the complete language bar HTML
      */
     function buildLanguageBar() {
-        var html = '<div class="mw-language-bar-footer">';
-        html += '<span class="mw-language-bar-label">Languages:</span>';
-        html += '<span class="mw-language-bar-links">';
+        var html = '<div class="mw-language-bar-wrap">';
+        html += '<div class="mw-language-bar-footer nmbox noprint mw-content-ltr" dir="ltr">';
+        html += '<div class="mw-language-bar-header nmbox-header">Languages:</div>';
+        html += '<div class="mw-language-bar-text nmbox-text mbox-text">';
 
         for ( var i = 0; i < languages.length; i++ ) {
             if ( i > 0 ) {
-                html += '<span class="mw-language-bar-separator">•</span>';
+                html += ' &nbsp;• ';
             }
-            html += buildLanguageLink( languages[i][0], languages[i][1] );
+            html += buildLanguageLink( languages[i][0], languages[i][1], i === 0 );
         }
 
-        html += '</span>';
+        html += '</div>';
+        html += '</div>';
         html += '</div>';
 
         return html;
@@ -119,6 +126,10 @@
         var contentArea = document.querySelector( '.mw-body-content, #mw-content-text' );
 
         if ( !contentArea ) {
+            return;
+        }
+
+        if ( document.querySelector( '.mw-language-bar-footer' ) ) {
             return;
         }
 

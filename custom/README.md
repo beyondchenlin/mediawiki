@@ -59,9 +59,9 @@ var languages = [
 
 编辑 `language-bar.css`：
 
-- 边框颜色：修改 `border: 1px solid #36c;` 中的 `#36c`
-- 链接颜色：修改 `.mw-language-bar-links a { color: #36c; }`
-- 内边距：修改 `padding: 0.75em 1em;`
+- 边框颜色：修改 `.mw-language-bar-footer` 中的 `border: 1px solid var(--border-color-base, #a2a9b1);`
+- 背景颜色：修改 `.mw-language-bar-footer` 的 `background: #f8f9fa;` 和 `.mw-language-bar-header` 的 `background: #eaecf0;`
+- 内边距：修改 `.mw-language-bar-header` 和 `.mw-language-bar-text` 的 `padding: 4px 0.5em;`
 
 ## 技术说明
 
