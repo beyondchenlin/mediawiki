@@ -1,0 +1,58 @@
+/**
+ * MediaWiki Language Bar - Footer Styles
+ * Copy this content to: MediaWiki:Vector.css
+ *
+ * Matches official mediawiki.org language bar styling exactly
+ */
+
+/* Language bar container */
+.mw-language-bar-footer {
+    border: 1px solid #36c;
+    border-radius: 2px;
+    padding: 0.75em 1em;
+    margin: 1.5em 0;
+    background-color: #fff;
+    line-height: 1.6;
+    clear: both;
+}
+
+/* "Languages:" label */
+.mw-language-bar-footer .mw-language-bar-label {
+    color: #36c;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* Language links container */
+.mw-language-bar-footer .mw-language-bar-links {
+    display: inline;
+}
+
+/* Individual language links */
+.mw-language-bar-footer .mw-language-bar-links a {
+    color: #36c;
+    text-decoration: none;
+}
+
+.mw-language-bar-footer .mw-language-bar-links a:hover {
+    text-decoration: underline;
+}
+
+.mw-language-bar-footer .mw-language-bar-links a:visited {
+    color: #36c;
+}
+
+/* Separator dots */
+.mw-language-bar-footer .mw-language-bar-separator {
+    color: #54595d;
+    margin: 0 0.35em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 720px) {
+    .mw-language-bar-footer {
+        padding: 0.5em 0.75em;
+        margin: 1em 0;
+        font-size: 0.9em;
+    }
+}
