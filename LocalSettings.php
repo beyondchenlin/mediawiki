@@ -201,3 +201,6 @@ wfLoadExtension( 'FlaggedRevs' );
 $wgFlaggedRevsNamespaces = [ NS_MAIN ];
 $wgFlaggedRevsAutoReview = 0;
 $wgFlaggedRevsOverride = true;
+
+# Language Bar Footer Extension
+wfLoadExtension( 'LanguageBarFooter' );
