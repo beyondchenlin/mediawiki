@@ -186,7 +186,7 @@ $wgGroupPermissions['sysop']['pagelang'] = true;
 
 # Language selector and page translation.
 wfLoadExtension( 'UniversalLanguageSelector' );
-$wgULSPosition = 'interlanguage';
+$wgULSPosition = 'personal';
 
 wfLoadExtension( 'Translate' );
 $wgGroupPermissions['user']['translate'] = true;

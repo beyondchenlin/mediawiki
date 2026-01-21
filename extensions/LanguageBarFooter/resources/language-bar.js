@@ -73,9 +73,12 @@
     if ( configLanguages && configLanguages.length > 0 ) {
         if ( typeof configLanguages[0] === 'string' ) {
             languages = configLanguages.map( function ( code ) {
-                var name = mw.language.getData( code, 'language-name' ) ||
+                var name = code;
+                if ( mw.language && typeof mw.language.getData === 'function' ) {
+                    name = mw.language.getData( code, 'language-name' ) ||
                            mw.language.getData( code, 'language-name-fallback' ) ||
                            code;
+                }
                 return [code, name];
             } );
         } else if ( typeof configLanguages[0] === 'object' ) {
@@ -167,17 +170,26 @@
         }
     }
 
+    var initCalled = false;
+    function initLanguageBar() {
+        if ( initCalled ) {
+            return;
+        }
+        initCalled = true;
+        insertLanguageBar();
+    }
+
     if ( document.readyState === 'loading' ) {
         document.addEventListener( 'DOMContentLoaded', function () {
             try {
-                insertLanguageBar();
+                initLanguageBar();
             } catch ( e ) {
                 console.error( 'LanguageBarFooter: Error initializing', e );
             }
         } );
     } else {
         try {
-            insertLanguageBar();
+            initLanguageBar();
         } catch ( e ) {
             console.error( 'LanguageBarFooter: Error initializing', e );
         }
