@@ -1,0 +1,64 @@
+{
+    "name": "LanguageBarFooter",
+    "version": "1.0.0",
+    "author": "Your Name",
+    "url": "https://github.com/yourusername/LanguageBarFooter",
+    "descriptionmsg": "languagebarfooter-desc",
+    "license-name": "MIT",
+    "type": "other",
+    "requires": {
+        "MediaWiki": ">= 1.44.0"
+    },
+    "AutoloadNamespaces": {
+        "MediaWiki\\Extension\\LanguageBarFooter\\": "src/"
+    },
+    "Hooks": {
+        "BeforePageDisplay": "main"
+    },
+    "HookHandlers": {
+        "main": {
+            "class": "MediaWiki\\Extension\\LanguageBarFooter\\Hooks"
+        }
+    },
+    "config": {
+        "LanguageBarFooterLanguages": {
+            "value": ["en", "af", "ar", "ast", "az", "ba", "be", "be-tarask", "bg", "bn", "bs", "ca", "ckb", "cs", "da", "de", "el", "eo", "es", "fa", "fi", "fr", "gl", "gu", "he", "hi", "hr", "hu", "hy", "ia", "id", "it", "ja", "jv", "kk", "ko", "ml", "ms", "mwl", "nl", "or", "pl", "pt", "pt-br", "ro", "ru", "sc", "si", "sk", "sl", "so", "sq", "sr", "sv", "syl", "th", "tr", "uk", "vi", "yue", "zh"],
+            "description": "List of language codes to display in the language bar"
+        },
+        "LanguageBarFooterPosition": {
+            "value": "footer",
+            "description": "Position to insert the language bar (footer/content)"
+        },
+        "LanguageBarFooterEnabledSkins": {
+            "value": ["vector", "vector-2022"],
+            "description": "List of skins where the language bar should be displayed"
+        }
+    },
+    "ResourceModules": {
+        "ext.languageBarFooter.styles": {
+            "localBasePath": "resources",
+            "remoteExtPath": "LanguageBarFooter/resources",
+            "styles": [
+                "language-bar.css"
+            ],
+            "position": "top"
+        },
+        "ext.languageBarFooter.scripts": {
+            "localBasePath": "resources",
+            "remoteExtPath": "LanguageBarFooter/resources",
+            "scripts": [
+                "language-bar.js"
+            ],
+            "dependencies": [
+                "mediawiki.util"
+            ],
+            "position": "bottom"
+        }
+    },
+    "MessagesDirs": {
+        "LanguageBarFooter": [
+            "i18n"
+        ]
+    },
+    "manifest_version": 2
+}

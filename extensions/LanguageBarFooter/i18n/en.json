@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Your Name"
+        ]
+    },
+    "languagebarfooter-desc": "Adds a multilingual language bar at the footer matching official mediawiki.org styling"
+}
