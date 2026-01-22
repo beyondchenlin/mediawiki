@@ -1,44 +1,35 @@
-/* Language Bar Container - Official MediaWiki Style */
-.mw-language-bar-wrap {
-    display: flow-root;
-    margin: 0.5em 0;
-    clear: both;
-}
-
-/* Main Language Bar - Inline Layout (matches official MediaWiki.org) */
+/* Official MediaWiki nmbox Style - Exact Match */
 .mw-language-bar-footer {
+    display: table;
     background-color: #f8f9fa;
     border: 1px solid #a2a9b1;
     box-sizing: border-box;
-    padding: 0.5em;
-    font-size: 88%;
-    line-height: 1.6em;
-    overflow: hidden;
-    word-wrap: break-word;
+    margin: 2px 0;
+    padding: 0;
+    width: 100%;
 }
 
-.mw-language-bar-footer * {
-    box-sizing: border-box;
-}
-
-/* Header - Inline with content */
 .mw-language-bar-footer .mw-language-bar-header {
-    display: inline;
+    display: table-cell;
+    background-color: #eaecf0;
+    padding: 4px 8px;
     font-weight: bold;
-    margin-right: 0.5em;
-    color: #202122;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-right: 1px solid #a2a9b1;
 }
 
-/* Text Section - Inline flow */
 .mw-language-bar-footer .mw-language-bar-text {
-    display: inline;
+    display: table-cell;
+    padding: 4px 8px;
+    vertical-align: middle;
+    line-height: 1.6;
 }
 
-/* Language links - Inline with wrapping */
 .mw-language-bar-footer a {
     color: #0645ad;
     text-decoration: none;
-    white-space: nowrap;
 }
 
 .mw-language-bar-footer a:visited {
@@ -49,19 +40,14 @@
     text-decoration: underline;
 }
 
-.mw-language-bar-footer a:active {
-    color: #faa700;
-}
-
-/* bdi elements for language names */
 .mw-language-bar-footer bdi {
-    display: inline;
+    unicode-bidi: isolate;
 }
 
 /* RTL Support */
 .mw-language-bar-footer[dir="rtl"] .mw-language-bar-header {
-    margin-right: 0;
-    margin-left: 0.5em;
+    border-right: none;
+    border-left: 1px solid #a2a9b1;
 }
 
 /* Dark Mode Support - Night theme */
@@ -73,7 +59,8 @@
     }
 
     html.skin-theme-clientpref-night .mw-language-bar-footer .mw-language-bar-header {
-        color: #eaecf0;
+        background-color: #202122;
+        border-color: #54595d;
     }
 
     html.skin-theme-clientpref-night .mw-language-bar-footer a {
@@ -82,14 +69,6 @@
 
     html.skin-theme-clientpref-night .mw-language-bar-footer a:visited {
         color: #a580d6;
-    }
-
-    html.skin-theme-clientpref-night .mw-language-bar-footer a:hover {
-        color: #8fb5f7;
-    }
-
-    html.skin-theme-clientpref-night .mw-language-bar-footer a:active {
-        color: #faa700;
     }
 }
 
@@ -102,7 +81,8 @@
     }
 
     html.skin-theme-clientpref-os .mw-language-bar-footer .mw-language-bar-header {
-        color: #eaecf0;
+        background-color: #202122;
+        border-color: #54595d;
     }
 
     html.skin-theme-clientpref-os .mw-language-bar-footer a {
@@ -111,13 +91,5 @@
 
     html.skin-theme-clientpref-os .mw-language-bar-footer a:visited {
         color: #a580d6;
-    }
-
-    html.skin-theme-clientpref-os .mw-language-bar-footer a:hover {
-        color: #8fb5f7;
-    }
-
-    html.skin-theme-clientpref-os .mw-language-bar-footer a:active {
-        color: #faa700;
     }
 }
