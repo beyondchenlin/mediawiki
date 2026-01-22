@@ -144,7 +144,7 @@
                 return;
             }
 
-            if ( document.querySelector( '.mw-language-bar-footer' ) ) {
+            if ( document.querySelector( '.mw-language-bar-wrap' ) ) {
                 return;
             }
 
