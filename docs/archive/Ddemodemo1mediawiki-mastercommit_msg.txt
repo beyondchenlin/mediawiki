@@ -1,0 +1,35 @@
+fix(LanguageBarFooter): 修复语言栏重复显示bug并优化样式
+
+用户提问：
+D:\demo\demo1\mediawiki-master\custom\EXTENSION_IMPLEMENTATION_PLAN.md 你看这是我的计划，但是现在有一个bug 就是重复显示了，但是我需要官方这样的。D:\demo\demo1\mediawiki-master\extensions\LanguageBarFooter 请帮我修复。务必使用frontend-design
+
+问题描述：
+MediaWiki LanguageBarFooter 扩展在页面上重复显示语言栏，用户希望修复此bug并使样式匹配官方 MediaWiki.org 的外观。
+
+问题根因：
+在 language-bar.js 的 insertLanguageBar() 函数中，重复检查使用的选择器是 `.mw-language-bar-footer`，但实际插入到 DOM 的最外层元素是 `.mw-language-bar-wrap`。这导致重复检查失效，每次脚本执行都会插入新的语言栏。
+
+解决方案：
+1. 修改 language-bar.js:147 的重复检查选择器，从 `.mw-language-bar-footer` 改为 `.mw-language-bar-wrap`，确保能正确检测已存在的语言栏
+2. 重构 language-bar.css，采用官方 MediaWiki nmbox 样式规范：
+   - 使用 display: table 布局实现桌面端左右分栏
+   - 移动端使用 display: block 实现上下堆叠
+   - 添加完整的链接状态样式（:link, :visited, :hover, :active）
+   - 优化深色模式支持，使用 MediaWiki 官方深色主题颜色
+   - 改进响应式断点和 RTL 语言支持
+3. 添加详细的 CSS 注释，提高代码可维护性
+
+改动范围：
+• extensions/LanguageBarFooter/resources/language-bar.js - 修复重复检查选择器
+• extensions/LanguageBarFooter/resources/language-bar.css - 重构样式以匹配官方 MediaWiki
+
+测试验证：
+✓ 重复检查逻辑：选择器现在匹配实际插入的元素类名
+✓ 样式匹配：采用官方 MediaWiki nmbox 样式规范
+✓ 响应式设计：桌面端表格布局，移动端堆叠布局
+✓ 深色模式：支持 night 主题和 OS 偏好设置
+✓ RTL 支持：正确处理从右到左语言的边框方向
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
