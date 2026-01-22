@@ -1,5 +1,7 @@
 # MediaWiki 多语言语言栏 - 扩展方式实现方案
 
+> Note: legacy `custom/language-bar.css` and `custom/language-bar.js` were removed; use `extensions/LanguageBarFooter/resources/`.
+
 ## 📋 方案概述
 
 本文档描述如何通过创建自定义扩展来实现多语言语言栏功能，这是 MediaWiki 官方推荐的最规范做法。
