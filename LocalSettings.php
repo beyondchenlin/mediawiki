@@ -185,9 +185,9 @@ $wgPageLanguageUseDB = true;
 $wgGroupPermissions['sysop']['pagelang'] = true;
 
 # Language selector and page translation.
-# Temporarily disabled to avoid conflict with LanguageBarFooter
-# wfLoadExtension( 'UniversalLanguageSelector' );
-# $wgULSPosition = 'personal';
+# Enable ULS for the header language selector (independent from footer bar).
+wfLoadExtension( 'UniversalLanguageSelector' );
+$wgULSPosition = 'personal';
 
 # wfLoadExtension( 'Translate' );
 # $wgGroupPermissions['user']['translate'] = true;
