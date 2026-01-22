@@ -1,51 +1,40 @@
-/* Language Bar Container */
+/* Language Bar Container - Official MediaWiki Style */
 .mw-language-bar-wrap {
     display: flow-root;
-    margin: 1em 0;
+    margin: 0.5em 0;
     clear: both;
 }
 
-/* Main Language Bar - Official MediaWiki nmbox styling */
+/* Main Language Bar - Inline Layout (matches official MediaWiki.org) */
 .mw-language-bar-footer {
     background-color: #f8f9fa;
     border: 1px solid #a2a9b1;
     box-sizing: border-box;
-    margin: 0.5em 0;
-    padding: 0;
-    display: table;
-    width: 100%;
+    padding: 0.5em;
+    font-size: 88%;
+    line-height: 1.6em;
+    overflow: hidden;
     word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 .mw-language-bar-footer * {
     box-sizing: border-box;
 }
 
-/* Header Section - "Languages:" label */
+/* Header - Inline with content */
 .mw-language-bar-footer .mw-language-bar-header {
-    background-color: #eaecf0;
-    padding: 0.25em 0.5em;
+    display: inline;
     font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    font-size: 0.875em;
+    margin-right: 0.5em;
     color: #202122;
 }
 
-/* Text Section - Language links */
+/* Text Section - Inline flow */
 .mw-language-bar-footer .mw-language-bar-text {
-    padding: 0.25em 0.5em;
-    width: 100%;
-    vertical-align: middle;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    font-size: 0.875em;
-    line-height: 1.6;
+    display: inline;
 }
 
-/* Language links styling */
+/* Language links - Inline with wrapping */
 .mw-language-bar-footer a {
     color: #0645ad;
     text-decoration: none;
@@ -64,50 +53,15 @@
     color: #faa700;
 }
 
-/* Mobile Layout - Stacked */
-@media screen and (max-width: 767px) {
-    .mw-language-bar-footer {
-        display: block;
-    }
-
-    .mw-language-bar-footer .mw-language-bar-header {
-        display: block;
-        border-bottom: 1px solid #a2a9b1;
-    }
-
-    .mw-language-bar-footer .mw-language-bar-text {
-        display: block;
-    }
-}
-
-/* Desktop Layout - Side by side */
-@media screen and (min-width: 768px) {
-    .mw-language-bar-footer {
-        display: table;
-    }
-
-    .mw-language-bar-footer .mw-language-bar-header {
-        display: table-cell;
-        border-right: 1px solid #a2a9b1;
-        width: 1%;
-    }
-
-    .mw-language-bar-footer .mw-language-bar-text {
-        display: table-cell;
-    }
+/* bdi elements for language names */
+.mw-language-bar-footer bdi {
+    display: inline;
 }
 
 /* RTL Support */
 .mw-language-bar-footer[dir="rtl"] .mw-language-bar-header {
-    border-right: none;
-    border-left: 1px solid #a2a9b1;
-}
-
-@media screen and (max-width: 767px) {
-    .mw-language-bar-footer[dir="rtl"] .mw-language-bar-header {
-        border-left: none;
-        border-bottom: 1px solid #a2a9b1;
-    }
+    margin-right: 0;
+    margin-left: 0.5em;
 }
 
 /* Dark Mode Support - Night theme */
@@ -119,8 +73,6 @@
     }
 
     html.skin-theme-clientpref-night .mw-language-bar-footer .mw-language-bar-header {
-        background-color: #202122;
-        border-color: #54595d;
         color: #eaecf0;
     }
 
@@ -150,8 +102,6 @@
     }
 
     html.skin-theme-clientpref-os .mw-language-bar-footer .mw-language-bar-header {
-        background-color: #202122;
-        border-color: #54595d;
         color: #eaecf0;
     }
 
