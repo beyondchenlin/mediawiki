@@ -185,16 +185,17 @@ $wgPageLanguageUseDB = true;
 $wgGroupPermissions['sysop']['pagelang'] = true;
 
 # Language selector and page translation.
-wfLoadExtension( 'UniversalLanguageSelector' );
-$wgULSPosition = 'personal';
+# Temporarily disabled to avoid conflict with LanguageBarFooter
+# wfLoadExtension( 'UniversalLanguageSelector' );
+# $wgULSPosition = 'personal';
 
-wfLoadExtension( 'Translate' );
-$wgGroupPermissions['user']['translate'] = true;
-$wgGroupPermissions['user']['translate-messagereview'] = true;
-$wgGroupPermissions['sysop']['pagetranslation'] = true;
-$wgEnablePageTranslation = true;
-$wgTranslatePageTranslationULS = true;
-$wgPageTranslationLanguageList = 'tag-only';
+# wfLoadExtension( 'Translate' );
+# $wgGroupPermissions['user']['translate'] = true;
+# $wgGroupPermissions['user']['translate-messagereview'] = true;
+# $wgGroupPermissions['sysop']['pagetranslation'] = true;
+# $wgEnablePageTranslation = true;
+# $wgTranslatePageTranslationULS = true;
+# $wgPageTranslationLanguageList = 'tag-only';
 
 # Review workflow (FlaggedRevs)
 wfLoadExtension( 'FlaggedRevs' );

@@ -22,7 +22,7 @@
     },
     "config": {
         "LanguageBarFooterLanguages": {
-            "value": ["en", "af", "ar", "ast", "az", "ba", "be", "be-tarask", "bg", "bn", "bs", "ca", "ckb", "cs", "da", "de", "el", "eo", "es", "fa", "fi", "fr", "gl", "gu", "he", "hi", "hr", "hu", "hy", "ia", "id", "it", "ja", "jv", "kk", "ko", "ml", "ms", "mwl", "nl", "or", "pl", "pt", "pt-br", "ro", "ru", "sc", "si", "sk", "sl", "so", "sq", "sr", "sv", "syl", "th", "tr", "uk", "vi", "yue", "zh"],
+            "value": [],
             "description": "List of language codes to display in the language bar"
         },
         "LanguageBarFooterPosition": {

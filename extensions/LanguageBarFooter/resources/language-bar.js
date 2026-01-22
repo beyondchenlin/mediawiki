@@ -144,6 +144,14 @@
                 return;
             }
 
+            // Remove any old language bars (from other sources) FIRST
+            var oldBars = document.querySelectorAll( '.mw-language-bar-footer' );
+            oldBars.forEach( function ( bar ) {
+                if ( !bar.closest( '.mw-language-bar-wrap' ) ) {
+                    bar.remove();
+                }
+            } );
+
             if ( document.querySelector( '.mw-language-bar-wrap' ) ) {
                 return;
             }
